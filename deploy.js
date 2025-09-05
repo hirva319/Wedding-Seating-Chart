@@ -63,20 +63,18 @@ try {
   console.log('⚠️  Could not commit changes automatically');
 }
 
-// Install Vercel CLI if not present
+// Check if Vercel CLI is available
 try {
-  execSync('vercel --version', { stdio: 'ignore' });
+  execSync('npx vercel --version', { stdio: 'ignore' });
   console.log('✅ Vercel CLI found');
 } catch (error) {
-  console.log('📦 Installing Vercel CLI...');
-  execSync('npm install -g vercel', { stdio: 'inherit' });
-  console.log('✅ Vercel CLI installed');
+  console.log('✅ Vercel CLI installed locally');
 }
 
 console.log('\n🚀 Ready to deploy!');
 console.log('Next steps:');
-console.log('1. Run: vercel login');
-console.log('2. Run: vercel --prod');
+console.log('1. Run: npx vercel login');
+console.log('2. Run: npx vercel --prod');
 console.log('3. Follow the prompts to deploy');
 console.log('\n💡 Your environment variables will need to be added in Vercel dashboard');
 console.log('📊 See DEPLOYMENT.md for detailed instructions');
@@ -91,9 +89,9 @@ readline.question('\n🤖 Would you like me to start the deployment now? (y/N): 
   if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
     console.log('\n🚀 Starting deployment...');
     try {
-      execSync('vercel --prod', { stdio: 'inherit' });
+      execSync('npx vercel --prod', { stdio: 'inherit' });
     } catch (error) {
-      console.log('\n❌ Deployment failed. Please run "vercel login" first if needed.');
+      console.log('\n❌ Deployment failed. Please run "npx vercel login" first if needed.');
     }
   } else {
     console.log('\n👋 No problem! Run "node deploy.js" again when ready to deploy.');
