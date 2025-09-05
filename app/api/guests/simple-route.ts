@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 // You can replace this with real Google Sheets data once we solve the auth issue
 
 const mockGuestData = [
-  ['Hirva Shah', '1'],
+  ['John Smith', '1'],
   ['Jane Doe', '2'],
   ['Bob Johnson', '1'],
   ['Alice Brown', '3'],
